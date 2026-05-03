@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+
+  <defs>
+    <!-- Mask to cut the crescent bite -->
+    <mask id="crescentMask">
+      <rect width="400" height="400" fill="white"/>
+      <circle cx="218" cy="182" r="122" fill="black"/>
+    </mask>
+
+    <!-- Clip stars to moon body only -->
+    <clipPath id="moonClip">
+      <circle cx="148" cy="208" r="138"/>
+    </clipPath>
+
+    <!-- 6-pointed star shape (reusable) -->
+    <polygon id="star6"
+      points="0,-11 2.75,-4.76 9.53,-5.5 5.5,0 9.53,5.5 2.75,4.76 0,11 -2.75,4.76 -9.53,5.5 -5.5,0 -9.53,-5.5 -2.75,-4.76"
+      fill="#A3C3A6"/>
+  </defs>
+
+  <!-- ░ BACKGROUND ░ -->
+  <rect width="400" height="400" fill="#E8A892"/>
+
+  <!-- ░ CRESCENT MOON ░ -->
+  <circle cx="148" cy="208" r="138" fill="#2F4A3C" mask="url(#crescentMask)"/>
+
+  <!-- Inner ring on moon -->
+  <circle cx="148" cy="208" r="125" fill="none" stroke="#6E8B74" stroke-width="1.2"
+          mask="url(#crescentMask)" clip-path="url(#moonClip)"/>
+
+  <!-- ░ STARS ON MOON ░ (clipped to moon body, 8-pointed asterisk style) -->
+  <g clip-path="url(#moonClip)">
+    <!-- Star 1 – upper arc -->
+    <use href="#star6" transform="translate(72, 110) rotate(15)"/>
+    <!-- Star 2 – mid-left -->
+    <use href="#star6" transform="translate(32, 185) rotate(0)"/>
+    <!-- Star 3 – lower-left arc -->
+    <use href="#star6" transform="translate(58, 263) rotate(-10)"/>
+    <!-- Star 4 – lower arc -->
+    <use href="#star6" transform="translate(120, 308) rotate(5)"/>
+    <!-- Star 5 – bottom-right arc -->
+    <use href="#star6" transform="translate(188, 320) rotate(10)"/>
+  </g>
+
+  <!-- ░ OLIVE BRANCH ░ -->
+  <!-- Central stem curving from left (near crescent tip) to right -->
+  <path d="M 178,82 Q 210,60 255,52 Q 280,48 300,58"
+        fill="none" stroke="#2F4A3C" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- Leaf pairs along the branch -->
+  <!-- Leaf 1 (near left) -->
+  <ellipse cx="196" cy="71" rx="10" ry="5" fill="#2F4A3C" transform="rotate(-35,196,71)"/>
+  <ellipse cx="191" cy="79" rx="10" ry="5" fill="#2F4A3C" transform="rotate(145,191,79)"/>
+
+  <!-- Leaf 2 -->
+  <ellipse cx="215" cy="60" rx="10" ry="5" fill="#2F4A3C" transform="rotate(-45,215,60)"/>
+  <ellipse cx="210" cy="68" rx="10" ry="5" fill="#2F4A3C" transform="rotate(135,210,68)"/>
+
+  <!-- Leaf 3 (mid) -->
+  <ellipse cx="238" cy="53" rx="10" ry="5" fill="#2F4A3C" transform="rotate(-50,238,53)"/>
+  <ellipse cx="232" cy="62" rx="10" ry="5" fill="#2F4A3C" transform="rotate(130,232,62)"/>
+
+  <!-- Leaf 4 -->
+  <ellipse cx="261" cy="49" rx="9" ry="4.5" fill="#2F4A3C" transform="rotate(-42,261,49)"/>
+  <ellipse cx="255" cy="58" rx="9" ry="4.5" fill="#2F4A3C" transform="rotate(138,255,58)"/>
+
+  <!-- Leaf 5 (tip) -->
+  <ellipse cx="282" cy="50" rx="9" ry="4" fill="#2F4A3C" transform="rotate(-30,282,50)"/>
+  <ellipse cx="278" cy="60" rx="9" ry="4" fill="#2F4A3C" transform="rotate(150,278,60)"/>
+
+  <!-- Berry dots at tip -->
+  <circle cx="298" cy="55" r="3" fill="#3E5F4D"/>
+  <circle cx="307" cy="59" r="2.5" fill="#3E5F4D"/>
+  <circle cx="302" cy="65" r="2" fill="#3E5F4D"/>
+
+  <!-- ░ DR. EMMY TEXT ░ -->
+  <text x="240" y="150"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="42"
+        font-weight="400"
+        fill="#2F4A3C"
+        text-anchor="middle"
+        letter-spacing="1">Dr.Emmy</text>
+
+</svg>
