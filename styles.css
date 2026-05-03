@@ -5,25 +5,26 @@
 
 /* ── Variables ── */
 :root {
-  --clr-primary:    #C9907A;
-  --clr-primary-dk: #A96B58;
-  --clr-primary-lt: #F3DDD5;
-  --clr-accent:     #E8B4A0;
-  --clr-cream:      #FDF8F5;
-  --clr-sand:       #F5EDE6;
-  --clr-dark:       #3D2318;
-  --clr-text:       #5C3D2E;
-  --clr-muted:      #8C6A5A;
-  --clr-border:     #E8D5CC;
+  /* Dr. Emmy design tokens */
+  --clr-primary:    #2F4A3C;   /* dark forest green */
+  --clr-primary-dk: #1E3228;   /* deeper green for hover */
+  --clr-primary-lt: #D6EBD8;   /* light mint – soft highlights */
+  --clr-accent:     #E8A892;   /* warm peach – brand accent */
+  --clr-cream:      #FBF7F5;   /* near-white warm background */
+  --clr-sand:       #F5E8E1;   /* light peach tint sections */
+  --clr-dark:       #1A2B22;   /* very dark green – footer/contact bg */
+  --clr-text:       #2F4A3C;   /* dark green body text */
+  --clr-muted:      #6E8B74;   /* medium sage – secondary text */
+  --clr-border:     #C0D9C3;   /* soft green border */
   --clr-white:      #FFFFFF;
   --clr-green:      #25D366;
   --clr-green-dk:   #1DA851;
 
   --ff-body: 'Cairo', sans-serif;
 
-  --shadow-sm: 0 2px 8px rgba(61,35,24,.08);
-  --shadow-md: 0 4px 20px rgba(61,35,24,.12);
-  --shadow-lg: 0 8px 40px rgba(61,35,24,.16);
+  --shadow-sm: 0 2px 8px rgba(47,74,60,.08);
+  --shadow-md: 0 4px 20px rgba(47,74,60,.13);
+  --shadow-lg: 0 8px 40px rgba(47,74,60,.18);
 
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -74,12 +75,12 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .btn--primary {
   background: var(--clr-primary);
   color: var(--clr-white);
-  box-shadow: 0 4px 16px rgba(201,144,122,.4);
+  box-shadow: 0 4px 16px rgba(47,74,60,.35);
 }
 .btn--primary:hover {
   background: var(--clr-primary-dk);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(201,144,122,.5);
+  box-shadow: 0 6px 20px rgba(47,74,60,.45);
 }
 
 .btn--ghost {
@@ -154,7 +155,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(253,248,245,.92);
+  background: rgba(251,247,245,.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--clr-border);
@@ -167,12 +168,33 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   height: 100%;
 }
 .logo {
-  font-size: 1.45rem;
-  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   flex-shrink: 0;
+  text-decoration: none;
 }
-.logo__dreamy { color: var(--clr-dark); }
-.logo__care   { color: var(--clr-primary); }
+.logo__img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.logo__dreamy {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--clr-primary);
+}
+.logo__care {
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--clr-muted);
+  letter-spacing: .06em;
+}
 
 .nav { display: flex; gap: 24px; align-items: center; margin-inline-start: auto; }
 .nav__link {
@@ -230,24 +252,24 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   position: relative;
   overflow: hidden;
   padding: 80px 0 90px;
-  background: linear-gradient(135deg, var(--clr-cream) 0%, var(--clr-sand) 100%);
+  background: linear-gradient(135deg, var(--clr-cream) 0%, var(--clr-sand) 60%, #F1C1B0 100%);
 }
 .hero__blob {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: .45;
+  opacity: .4;
   pointer-events: none;
 }
 .hero__blob--1 {
-  width: 480px; height: 480px;
+  width: 500px; height: 500px;
   background: var(--clr-accent);
-  top: -120px; left: -100px;
+  top: -140px; left: -120px;
 }
 .hero__blob--2 {
-  width: 360px; height: 360px;
+  width: 380px; height: 380px;
   background: var(--clr-primary-lt);
-  bottom: -80px; right: -60px;
+  bottom: -100px; right: -80px;
 }
 .hero__inner {
   position: relative;
@@ -319,7 +341,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   box-shadow: var(--shadow-md);
 }
 .hero__card--accent {
-  background: var(--clr-primary-lt);
+  background: #FDEAE3;
   border-color: var(--clr-accent);
 }
 .hero__card-icon { font-size: 1.6rem; }
@@ -596,7 +618,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
    ════════════════════════════════════════ */
 .contact-section {
   padding: 72px 0;
-  background: linear-gradient(135deg, var(--clr-dark) 0%, #6B3A28 100%);
+  background: linear-gradient(135deg, var(--clr-dark) 0%, #2F4A3C 100%);
 }
 .contact-section__inner {
   display: flex;
@@ -650,6 +672,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   border-bottom: 1px solid rgba(255,255,255,.1);
 }
 .footer__brand .logo { margin-bottom: 8px; }
+.footer__brand .logo__img { filter: brightness(0) invert(1); opacity: .9; }
 .footer__brand .logo__dreamy { color: var(--clr-white); }
 .footer__brand .logo__care   { color: var(--clr-accent); }
 .footer__brand p { font-size: .88rem; }
@@ -741,14 +764,14 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 18px rgba(201,144,122,.5);
+  box-shadow: 0 4px 18px rgba(47,74,60,.4);
   transition: transform .22s, box-shadow .22s;
   border: none;
   cursor: pointer;
 }
 .chatbot-toggle:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 24px rgba(201,144,122,.6);
+  box-shadow: 0 6px 24px rgba(47,74,60,.55);
 }
 
 .chatbot-panel {
